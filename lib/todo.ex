@@ -15,8 +15,16 @@ defmodule Todo do
   end
 
   def done(index) do
-    update(index, fn task ->
-      String.replace(task, "[ ]", "[x]")
+    update(index, fn
+      "- [ ] " <> rest ->
+        "- [x] " <> rest
+
+      "- [x] " <> _ = task ->
+        IO.puts("Task already done")
+        task
+
+      task ->
+        task
     end)
   end
 
