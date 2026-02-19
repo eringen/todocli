@@ -21,3 +21,7 @@ mix escript.build
 
 This produces a `todo` binary you can place on your `PATH`.
 
+## Shell integration
+
+An optional shell script can automatically display your todo list when opening a terminal, and re-show it after 1 hour when pressing Enter on an empty prompt.  
+This works by tracking the last time the list was shown and does not interfere with normal shell usage.
