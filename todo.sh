@@ -24,6 +24,7 @@ todo_show_and_update() {
   command -v "$TODO_CMD" >/dev/null 2>&1 || return
   echo
   "$TODO_CMD"
+  rm $TODO_STATE_FILE
   date +%s >"$TODO_STATE_FILE"
 }
 
